@@ -48,21 +48,21 @@
               "<tr><td>" +
               (index + 1) +
               "</td><td>" +
-              value.englishWord + //Column 1
+              value.Date + //Column 1
               "</td><td>" +
-              value.hindiWord + //Column 2
+              value.Set + //Column 2
               "</td><td>" +
-              value.englishGrammar + //Column 3
+              value.Value + //Column 3
               "</td></tr>";
             $("table").append(record);
-            if (value.englishWord.length == 0 || value.hindiWord.length == 0) {
+            if (value.Date.length == 0 || value.Set.length == 0) {
               console.log("String Empty");
             } else {
               db.collection("<Collection name>")
                 .add({
-                  english: value.englishWord, //Document Field1
-                  hindi: value.hindiWord, //Document Field2
-                  searchKey: value.englishWord.charAt(0).toUpperCase() //Document Field3
+                  english: value.Date, //Document Field1
+                  hindi: value.Set, //Document Field2
+                  searchKey: value.Date.charAt(0).toUpperCase() //Document Field3
                 })
                 .then(function (docRef) {
                   console.log("Document Id", docRef.id);
